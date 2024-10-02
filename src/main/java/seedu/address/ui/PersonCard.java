@@ -51,10 +51,14 @@ public class PersonCard extends UiPart<Region> {
         this.person = person;
         id.setText(displayedIndex + ". ");
         name.setText(person.getName().fullName);
-        phone.setText(person.getPhone().value);
-        emergencyContact.setText(person.getEmergencyContact().value);
-        address.setText(person.getAddress().value);
-        note.setText(person.getNote().value);
+        phone.setText("Phone Number: " + person.getPhone().value);
+        emergencyContact.setText("Emergency Contact: " + person.getEmergencyContact().value);
+        address.setText("Address: " + person.getAddress().value);
+        if (!person.getNote().value.isEmpty()) {
+            note.setText("Note: " + person.getNote().value);
+        } else {
+            note.setText("");
+        }
         person.getTags().stream()
                 .sorted(Comparator.comparing(tag -> tag.tagName))
                 .forEach(tag -> tags.getChildren().add(new Label(tag.tagName)));

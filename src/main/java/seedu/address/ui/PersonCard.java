@@ -68,11 +68,12 @@ public class PersonCard extends UiPart<Region> {
         tasks.setText("Tasks: " + person.getTaskList().size());
 
         // Listener to update the task count whenever the task list changes
-        person.getTaskList().asUnmodifiableObservableList()
+        person.getTaskList()
+                .asUnmodifiableObservableList()
                 .addListener((ListChangeListener<? super Task>) change -> {
-            while (change.next()) {
-                tasks.setText("Tasks: " + person.getTaskList().size());
-            }
-        });
+                    while (change.next()) {
+                        tasks.setText("Tasks: " + person.getTaskList().size());
+                    }
+                });
     }
 }

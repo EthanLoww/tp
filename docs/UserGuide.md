@@ -63,7 +63,7 @@ This detailed guide will walk you through how to make the most of **EduManage** 
    A [GUI](#6-glossary-table) similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
 
    ![Ui](images/Ui.png)
-   <br>
+   <br><br>
    
 5. Type the command in the command box and press Enter to execute it. e.g., typing **`help`** and pressing Enter will open the help window.<br>
    Some example commands you can try:
